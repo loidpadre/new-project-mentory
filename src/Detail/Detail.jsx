@@ -1,12 +1,18 @@
-import {useParams} from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useParams, Link } from "react-router-dom"
 import { ListUser } from "../ListUser"
-export default function Detail(){
-    const {id} = useParams()
-   
-    const user = ListUser.find(i => i.id === id)
-    return(
+
+export default function Detail() {
+    const { id } = useParams()
+
+
+    const profile = ListUser.find((item) => item.id === parseInt(id))
+    return (
         <div>
-            <h1>{user.name}</h1>
+            <Link to={'/'}>Voltar</Link>
+            <h1>{profile.name}</h1>
+            <h3>{profile.proffesion}</h3>
+            <h3>{profile.year}</h3>
         </div>
     )
 }

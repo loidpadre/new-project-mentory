@@ -4,3 +4,10 @@
   padding: 2rem;
 }
 
+.pokemon-sprite {
+  transition: transform 0.5s ease;
+}
+
+.flip {
+  transform: scaleX(-1);
+}
